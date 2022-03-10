@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini proyecto 1</title>
+    <!--sweetalert-->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- Estilos -->
+    <link rel="stylesheet" href="css/styles.css">
+
+</head>
+
+<body>
+
+    <div class="juego" id="CajaJuego">
+        <div class="juego__drop">
+            <p id="puntaje">0 puntos</p>
+            <!-- Aqui iran las imagenes -->
+            <div class="juego__habitat">
+                <canvas id="habitat0" width="300" height="300" ondragenter="return enter(event)" ondragover="return over(event)" ondragleave="return leave(event)" ondrop="return drop(event)"></canvas>
+                <canvas id="habitat1" width="300" height="300" ondragenter="return enter(event)" ondragover="return over(event)" ondragleave="return leave(event)" ondrop="return drop(event)"></canvas>
+                <canvas id="habitat2" width="300" height="300" ondragenter="return enter(event)" ondragover="return over(event)" ondragleave="return leave(event)" ondrop="return drop(event)"></canvas>
+                <canvas id="habitat3" width="300" height="300" ondragenter="return enter(event)" ondragover="return over(event)" ondragleave="return leave(event)" ondrop="return drop(event)"></canvas>
+                <canvas id="habitat4" width="300" height="300" ondragenter="return enter(event)" ondragover="return over(event)" ondragleave="return leave(event)" ondrop="return drop(event)"></canvas>
+                <canvas id="habitat5" width="300" height="300" ondragenter="return enter(event)" ondragover="return over(event)" ondragleave="return leave(event)" ondrop="return drop(event)"></canvas>
+            </div>
+
+            <div class="juego__animales">
+                <img src="" id="animal0" draggable="true" ondragstart="start(event)" ondragend="end(event)">
+                <img src="" id="animal1" draggable="true" ondragstart="start(event)" ondragend="end(event)">
+                <img src="" id="animal2" draggable="true" ondragstart="start(event)" ondragend="end(event)">
+                <img src="" id="animal3" draggable="true" ondragstart="start(event)" ondragend="end(event)">
+                <img src="" id="animal4" draggable="true" ondragstart="start(event)" ondragend="end(event)">
+                <img src="" id="animal5" draggable="true" ondragstart="start(event)" ondragend="end(event)">
+            </div>
+
+        </div>
+
+        <div class="juego__text">
+            <p id="juego__txt"></p>
+            <p id="juego__nombreAnimal"></p>
+            <button id="juego__button">Comprobar</button>
+        </div>
+
+        <img src="images/logo.png" alt="logo del juego" class="juego__logo"> <!-- Ira absolute -->
+    </div>
+
+
+
+    <div class="ganadorClose" id="CartelGanador">
+        <div class="ganador__into">
+            <h2 class="ganador__title" id="ganador__title__id">¡Felicidades!</h2>
+
+            <p class="ganador__text">Completaste TODOS los niveles Gracias a tu ayuda los animalitos por fin están en casa <br><strong>¡¡Eres alguien increible!!</strong></p>
+
+            <button id="ganador__reiniciar">REINICIAR</button>
+            <button id="ganador__creditos">VER CREDITOS</button>
+            <img src="images/logo.png" alt="logo del juego" class="ganador__logo"> <!-- Ira absolute -->
+        </div>
+    </div>
+
+
+    <!--imagenes ocultas para los canvas de los habitats-->
+    <img src="images/abeja-habitat.png" alt="" style="display:none;" id="images/abeja-habitat.png">
+    <img src="images/chango-habitat.png" alt="" style="display: none;" id="images/chango-habitat.png">
+    <img src="images/hormiga-habitat.png" alt="" style="display: none;" id="images/hormiga-habitat.png">
+    <img src="images/lobo-habitat.png" alt="" style="display: none;" id="images/lobo-habitat.png">
+    <img src="images/oso-habitat.png" alt="" style="display: none;" id="images/oso-habitat.png">
+    <img src="images/serpiente-habitat.png" alt="" style="display: none;" id="images/serpiente-habitat.png">
+    <img src="images/osoPolar-habitat.png" alt="" style="display: none;" id="images/osoPolar-habitat.png">
+    <img src="images/pecesito-habitat.png" alt="" style="display: none;" id="images/pecesito-habitat.png">
+    <img src="images/perro-habitat.png" alt="" style="display: none;" id="images/perro-habitat.png">
+    <img src="images/rana-habitat.png" alt="" style="display: none;" id="images/rana-habitat.png">
+
+    <img src="images/abeja.png" alt="" style="display:none;" id="images/abeja.png">
+    <img src="images/chango.png" alt="" style="display: none;" id="images/chango.png">
+    <img src="images/hormiga.png" alt="" style="display: none;" id="images/hormiga.png">
+    <img src="images/lobo.png" alt="" style="display: none;" id="images/lobo.png">
+    <img src="images/oso.png" alt="" style="display: none;" id="images/oso.png">
+    <img src="images/serpiente.png" alt="" style="display: none;" id="images/serpiente.png">
+    <img src="images/osoPolar.png" alt="" style="display: none;" id="images/osoPolar.png">
+    <img src="images/pecesito.png" alt="" style="display: none;" id="images/pecesito.png">
+    <img src="images/perro.png" alt="" style="display: none;" id="images/perro.png">
+    <img src="images/rana.png" alt="" style="display: none;" id="images/rana.png">
+    
+    
+    <!-- Div para el efecto blured -->
+    <div  id="blured"></div>
+    
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

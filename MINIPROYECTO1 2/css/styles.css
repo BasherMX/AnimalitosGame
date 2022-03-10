@@ -1,0 +1,518 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  font-family: "Roboto", helvetica, arial;
+  display: flex;
+
+  background-color: #e5e5f7;
+  background-image: radial-gradient(#444cf7 0.5px, #e5e5f7 0.5px);
+  background-size: 10px 10px;
+  overflow: hidden;
+
+}
+
+/* - - - ESTILOS DE LA PAGINA DE INICIO - - - */
+#lienzo {
+  background-color: transparent;
+  background-size: 100% 100%;
+}
+.canvas {
+  width: 100%;
+}
+.container {
+  width: 100%;
+  height: 90%;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+
+  transform: translateY(-5%);
+}
+
+.inputbttn{
+    transform: scale(1.5);
+    margin: auto;
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.container__img {
+  display: block;
+  width: 55%;
+  max-width: 700px;
+  filter: drop-shadow(5px 5px 2px rgba(0 0 0 /10%));
+}
+
+.container__text {
+  font-size: 1.3rem;
+}
+
+#container__input {
+  margin-top: -40px;
+  width: 320px;
+  height: 30px;
+  padding: 0 1.5rem;
+  border-radius: 30px;
+
+  outline: none;
+  border: none;
+  background-color: #ccc;
+  font-family: "Roboto";
+  font-size: 1rem;
+  color: #434343;
+  text-align: center;
+}
+
+#juego__txt {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 0 1em;
+  text-shadow: 2px 2px 5px rgba(0 0 0 / 30%);
+}
+
+#container__button {
+  width: 200px;
+  height: 30px;
+  padding: 0.5em 1.5em;
+
+  outline: none;
+  border: none;
+  background-color: #845ec2;
+  color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+
+  cursor: pointer;
+  box-shadow: 0 0 5px rgba(0 0 0 /20%);
+  margin-top: 20px;
+}
+
+#container__button:active {
+  transform: scale(1.1);
+}
+
+.bx {
+  font-size: 1.3rem;
+  margin-left: 20px;
+}
+
+.barra_Animales{
+  width: 150px;
+  position: absolute;
+  top: 0;
+  left: 10px;
+}
+
+.barra_Animales2{
+  width: 150px;
+  position: absolute;
+  top: 0;
+  right: 10px;
+  transform: rotateY(180deg);
+}
+
+.barra_Animales img, .barra_Animales2 img{
+  opacity: .4;
+  display: block;
+  width: 100px;
+  margin: 5rem auto;
+  animation: barraAnimales 20s linear infinite alternate;
+}
+@keyframes barraAnimales {
+  to{
+    transform: translateY(-170vh);
+  }
+}
+
+
+
+/* - - - - ESTILOS DEL JUEGO - - - */
+
+
+
+.juego {
+  width: 80%;
+  height: 85%;
+  margin: auto;
+  position: relative;
+
+  background-color: #ff9671;
+  outline: 15px solid #ffc75f;
+  border-radius: 20px;
+  border: 15px solid transparent;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.7rem;
+  box-shadow: 0px 25px 20px rgba(0 0 0 /30%);
+}
+
+.juego__correct {
+  animation: winner 2s cubic-bezier(0.29, -0.1, 0.24, 1.13) .3s;
+  --color: #06ff06;
+}
+
+.juego__incorrect {
+  animation: winner 2s cubic-bezier(0.29, -0.1, 0.24, 1.13) .3s;
+  --color: #ff0606;
+}
+
+.juego__logo {
+  width: 300px;
+  filter: drop-shadow(0 0 5px rgba(0 0 0 / 10%));
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(30%, -55%);
+}
+
+.juego__drop {
+  width: 100%;
+  height: 95%;
+}
+
+.juego__habitat,
+.juego__animales {
+  width: 100%;
+  height: 50%;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+}
+
+.juego__habitat img,
+.juego__animales img {
+  width: 50%;
+  margin: auto;
+  border-radius: 15px;
+  filter: drop-shadow( 0 5px 5px rgba(0 0 0 /40%));
+}
+
+.juego__text {
+  color: white;
+  font-size: 1rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#juego__button {
+  width: 150px;
+  height: 40px;
+
+  border-radius: 30px;
+  background-color: #d65db1;
+  color: white;
+  font-size: 1rem;
+
+  border: none;
+  outline: none;
+  margin-right: 1rem;
+
+  cursor: pointer;
+  box-shadow: 0 0 5px rgba(0 0 0 /20%);
+  opacity: 0;
+  
+  z-index: 11;
+}
+
+/* - - - - ESTILOS DEL MENSAJE DE GANADOR - - - -  */
+.ganador {
+  position: absolute;
+  z-index: 13;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+
+  background-color: #000000d2;
+  display: flex;
+  backdrop-filter: blur(7px);
+  clip-path: circle(150% at 50% 50%);
+  transition: clip-path 1s ease;
+  
+}
+
+.ganador__into {
+  width: 75%;
+  height: 85%;
+  margin: auto;
+  padding: 4.5rem 2rem 2rem;
+
+  background-color: #0089ba;
+  border: 15px solid #845ec2;
+  border-radius: 20px;
+
+  position: relative;
+  text-align: center;
+  color: white;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+
+  
+}
+
+.ganador__title {
+  grid-column: 1/-1;
+  grid-row: 1/2;
+  place-self: center;
+  font-size: 3rem;
+}
+
+.ganador__text {
+  grid-column: 1/-1;
+  grid-row: 2/3;
+  width: 80%;
+  place-self: center;
+  font-size: 2.1rem;
+  font-weight: 300;
+}
+
+.ganador__into button {
+  place-self: center;
+  width: 60%;
+  border-radius: 40px;
+  outline: 2px solid white;
+  border: none;
+
+  padding: 0.5em 2rem;
+  font-size: 1.5rem;
+  color: white;
+  box-shadow: 0 5px 5px rgba(0 0 0/20%);
+  cursor: pointer;
+}
+
+.ganador__into button:active {
+  transform: scale(1.1);
+}
+
+#ganador__reiniciar {
+  background-color: #2c73d2;
+}
+
+#ganador__creditos {
+  background-color: #008f7a;
+}
+
+.ganador__logo {
+  position: absolute;
+  width: 400px;
+  top: 0;
+  left: 0;
+  transform: translate(80%, -55%);
+}
+
+.ganadorClose {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+
+  background-color: #000000dd;
+  display: flex;
+
+  transition: clip-path 0.5s ease;
+  clip-path: circle(0.0% at 51% 45%);
+}
+
+#puntaje {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* - - - -  ESTILOS CREDITOS - - -  */
+.creditos__header{
+  width: 85%;
+  margin: 1.5rem auto 0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  opacity: 0;
+  animation: img2 2s ease forwards 1s;
+}
+
+.creditos__txt{
+  font-size: 3rem;
+  margin-top: 1.5rem;
+  color: #3d3d3d;
+}
+
+.creditos__logo{
+  width: 250px;
+}
+
+.creditos__button{
+  padding: 0.5rem 2rem;
+  width: 150px;
+  height: 40px;
+  border-radius: 20px;
+  background-color:#845ec2;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  line-height: 25px;
+  box-shadow: 0 5px 5px rgba(0 0 0 /15%);
+}
+
+
+.creditos__images {
+  width: 90%;
+  margin: 0 auto;
+  height: 300px;
+
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.creditos__dev {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  opacity: 0;
+  animation: img1 2s ease forwards;
+  transform: translate(0, -100vh);
+}
+
+.creditos__dev:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.creditos__dev:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.creditos__image {
+  width: 250px;
+  height: 250px;
+  position: relative;
+  margin-bottom: 15px;
+  border: 15px solid;
+  border-radius: 40px;
+  box-shadow: 0px 5px 5px rgba(0 0 0 /20%);
+}
+
+.img1 {
+  border-color: #ff9671;
+}
+
+.img2 {
+  border-color: #ffc75f;
+}
+
+.img3 {
+  border-color: #ff6f91;
+}
+
+.creditos__name{
+  font-weight: bold;
+}
+
+.creditos__info{
+  width: 90%;
+  margin: 0 auto;
+  padding: 1.5rem 2rem 2rem;
+  border-top: 1px solid #727272;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  text-align: center;
+  font-size: .9rem;
+  overflow: wrap;
+  opacity: 0;
+  animation: img2 2s ease forwards 1s;
+}
+
+.creditos__info p{
+  width: 24%;
+}
+
+/* - - - KEYFRAMES - - - */
+
+@keyframes winner {
+  0% {
+    border-color: var(--color);
+  }
+  20% {
+    border-color: transparent;
+  }
+  40% {
+    border-color: var(--color);
+  }
+  60% {
+    border-color: transparent;
+  }
+  80% {
+    border-color: var(--color);
+  }
+  100% {
+    border-color: transparent;
+  }
+}
+
+@keyframes img1 {
+  to {
+    opacity: 1;
+    transform: translate(0, 10%);
+  }
+}
+
+@keyframes img2 {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scalar {
+  to{
+    transform: scale(1.2);
+  }
+}
+
+/* - - - Estilos removibles - - - */
+.correcto {
+  border: 3px solid green;
+}
+
+.blurCSS{
+  outline: 4px solid white !important;
+  animation: scalar 1s linear infinite alternate;
+}
+
+.blured{
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  background-color: transparent;
+  backdrop-filter: blur(1px);
+  z-index: 10;
+}

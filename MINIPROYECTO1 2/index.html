@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini proyecto 1</title>
+
+    <!-- Iconos -->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <!--sweetalert-->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!--para font en canvas-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap">
+    <!-- Estilos -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body id="bodyIndex">
+
+    <div class="barra_Animales">
+        <img src="images/abeja.png">
+        <img src="images/chango.png">
+        <img src="images/hormiga.png">
+        <img src="images/lobo.png">
+        <img src="images/oso.png">
+        <img src="images/serpiente.png">
+        <img src="images/osoPolar.png">
+        <img src="images/pecesito.png">
+        <img src="images/perro.png">
+        <img src="images/rana.png">
+    </div>
+
+    <div class="barra_Animales2">
+        <img src="images/lobo.png">
+        <img src="images/oso.png">
+        <img src="images/chango.png">
+        <img src="images/abeja.png">
+        <img src="images/osoPolar.png">
+        <img src="images/hormiga.png">
+        <img src="images/rana.png">
+        <img src="images/serpiente.png">
+        <img src="images/pecesito.png">
+        <img src="images/perro.png">
+    </div>
+
+    <div class="container">
+        <div class="canvas">
+            <canvas id="lienzo" width="1390" height="420"></canvas>
+        </div>
+        <div class="inputbttn">
+            <input type="text" id="container__input" placeholder="Nombre..." value="">
+            <button id="container__button">INICIAR JUEGO <i class='bx bx-right-arrow-circle'></i> </button>    
+        </div>
+
+    </div>
+
+
+
+    <img src="images/logo.png" alt="" style="display:none;" id="logo">
+    <!--para poder usar el font en canvas-->
+    <span id="loader" style="font-family: Roboto;"></span>
+    <!-- Scripts -->
+    <script src="js/index.js"></script>
+
+
+
+</body>
+
+</html>
